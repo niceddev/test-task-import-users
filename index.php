@@ -1,6 +1,42 @@
+<?php
+
+
+
+
+require 'Services/Database.php';
+
+$config = require('config.php');
+$db = new \Services\Database($config);
+
+var_dump('<pre>');
+var_dump($db->query('
+    CREATE TABLE Persons (
+            PersonID int,
+            LastName varchar(255),
+            FirstName varchar(255),
+            Address varchar(255),
+            City varchar(255)
+        );
+'));
+var_dump('</pre>');
+
+
+
+
+
+
+
+
+
+
+
+
+?>
+
+
 <html lang="en">
 <head>
-    <title>CodePen - Create and Download CSV</title>
+    <title>Import Users - CSV</title>
     <style>
         * {
             font-size: 24px;
@@ -29,7 +65,7 @@
 </head>
 <body>
 
-    <form action="/controller/importUsers.php">
+    <form action="/Controller/ImportUsersController.php" enctype="multipart/form-data">
         <input type="file" id="file" name="file">
         <button type="submit">Import CSV</button>
     </form>
