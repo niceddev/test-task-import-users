@@ -11,3 +11,13 @@ create table users (
   sent smallint
 );
 ```
+
+# taskOne
+```
+php -S localhost:80
+```
+
+# taskTwo
+```
+php notify.php
+```
