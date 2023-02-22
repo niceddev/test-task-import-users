@@ -19,7 +19,7 @@ if (isset($_FILES['file']['name']) && $_FILES['file']['name'] != '') {
         $phoneNumber = $data[0];
         $name = $data[1];
 
-        $sql = 'INSERT INTO users (phone_number, name) VALUES (:phone_number, :name)';
+        $sql = 'insert into users (phone_number, name) values (:phone_number, :name)';
 
         $statement = $db->prepare($sql);
 
